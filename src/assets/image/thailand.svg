@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18.318" height="12" viewBox="0 0 18.318 12">
+  <g id="thailand" transform="translate(0 -88.3)">
+    <path id="Path_14101" data-name="Path 14101" d="M18,100.3H.315A.315.315,0,0,1,0,99.985V88.615A.315.315,0,0,1,.315,88.3H18a.315.315,0,0,1,.315.315v11.37A.31.31,0,0,1,18,100.3Z" transform="translate(0 0)" fill="#f5f5f5"/>
+    <g id="Group_5436" data-name="Group 5436" transform="translate(0 88.3)">
+      <path id="Path_14102" data-name="Path 14102" d="M18,372.693H.315A.315.315,0,0,1,0,372.378V370.8H18.318v1.578A.315.315,0,0,1,18,372.693Z" transform="translate(0 -360.693)" fill="#ff4b55"/>
+      <path id="Path_14103" data-name="Path 14103" d="M.315,88.3H18a.315.315,0,0,1,.315.315v1.578H0V88.615A.315.315,0,0,1,.315,88.3Z" transform="translate(0 -88.3)" fill="#ff4b55"/>
+    </g>
+    <rect id="Rectangle_186" data-name="Rectangle 186" width="18" height="4" transform="translate(0.004 92.3)" fill="#41479b"/>
+  </g>
+</svg>

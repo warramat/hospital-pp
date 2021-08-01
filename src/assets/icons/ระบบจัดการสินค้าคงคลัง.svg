@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18">
+  <defs>
+    <clipPath id="clip-ระบบจัดการสินค้าคงคลัง">
+      <rect width="18" height="18"/>
+    </clipPath>
+  </defs>
+  <g id="ระบบจัดการสินค้าคงคลัง" clip-path="url(#clip-ระบบจัดการสินค้าคงคลัง)">
+    <g id="Group_9731" data-name="Group 9731" transform="translate(-57 -446)">
+      <g id="scale" transform="translate(58 447.141)">
+        <path id="Path_16753" data-name="Path 16753" d="M15.2,0H3.965A.661.661,0,0,0,3.3.661V7.929H.661A.661.661,0,0,0,0,8.59V15.2a.661.661,0,0,0,.661.661H7.269a.661.661,0,0,0,.661-.661V12.555H15.2a.661.661,0,0,0,.661-.661V.661A.661.661,0,0,0,15.2,0ZM6.608,14.537H1.322V9.251H3.3v2.643a.661.661,0,0,0,.661.661H6.608Zm0-3.3H4.626V9.251H6.608Zm7.929,0H7.929V8.59a.661.661,0,0,0-.661-.661H4.626V1.322h9.912Zm0,0" fill="#76768e"/>
+      </g>
+      <path id="Path_16794" data-name="Path 16794" d="M-4863.865-4005.4c.035,0,0-7.57,0-7.57h10.64v10.57h-6.942l-.384-3Z" transform="translate(4926 4461)" fill="#76768e"/>
+    </g>
+  </g>
+</svg>

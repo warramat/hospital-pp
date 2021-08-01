@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="97" height="97" viewBox="0 0 97 97">
+  <defs>
+    <clipPath id="clip-Artboard_3">
+      <rect width="97" height="97"/>
+    </clipPath>
+  </defs>
+  <g id="Artboard_3" data-name="Artboard – 3" clip-path="url(#clip-Artboard_3)">
+    <path id="Icon_awesome-shopping-bag" data-name="Icon awesome-shopping-bag" d="M59.829,27.195V21.756a21.756,21.756,0,0,0-43.512,0v5.439H0V73.426a13.6,13.6,0,0,0,13.6,13.6H62.548a13.6,13.6,0,0,0,13.6-13.6V27.195ZM27.195,21.756a10.878,10.878,0,0,1,21.756,0v5.439H27.195Zm27.195,20.4a4.079,4.079,0,1,1,4.079-4.079A4.079,4.079,0,0,1,54.39,42.152Zm-32.634,0a4.079,4.079,0,1,1,4.079-4.079A4.079,4.079,0,0,1,21.756,42.152Z" transform="translate(9 5)" fill="#fff"/>
+  </g>
+</svg>

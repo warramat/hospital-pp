@@ -1,0 +1,338 @@
+// If you want to override variables do it here
+@import "variables";
+
+// Import CoreUI styles
+@import "~@coreui/coreui/scss/coreui.scss";
+
+// If you want to add something do it here
+@import "custom";
+
+@import "custom_antd";
+
+@import "~antd/dist/antd.css";
+
+.font-Sukhumvit {
+  font-family: "Sukhumvit Set" !important;
+}
+
+.font-Poppins {
+  font-family: "Poppins Set" !important;
+}
+
+.img {
+  border-radius: 50%;
+}
+
+::selection {
+  color: #fff;
+  background: #ff1818 !important;
+}
+
+* {
+  transition: all 0.3s ease-out;
+}
+
+.card3 {
+  // display: block;
+  // top: 0px;
+  // padding: 8px;
+  // margin: 32px;
+  // overflow: hidden;
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 3px;
+  border-color: #0fcc19;
+
+  // text-decoration: none;
+
+  border: 1px solid #f2f8f9;
+
+  &:hover {
+    border: 1px solid rgba(78, 209, 57, 1);
+    box-shadow: 0px 0px 999px 999px rgba(255, 255, 255, 0.5);
+    // z-index: 500;
+  }
+}
+
+.card3:hover {
+  .t {
+    color: rgba(78, 209, 57, 1);
+  }
+  // .go-corner {
+  //   transition: opactiy 0.3s linear;
+  //   opacity: 1;
+  // }
+}
+
+.card-text {
+  // display: block;
+  // top: 0px;
+  // padding: 8px;
+  // margin: 32px;
+  overflow: hidden;
+  position: relative;
+  width: 50%;
+  background-color: #fff;
+  border-radius: 3px;
+
+  text-decoration: none;
+
+  border: 1px solid rgba(78, 209, 57, 1);
+}
+.card-text1 {
+  // display: block;
+  // top: 0px;
+  // padding: 8px;
+  // margin: 32px;
+  overflow: hidden;
+  position: relative;
+  width: 50%;
+  background-color: #fff;
+  border-radius: 3px;
+
+  text-decoration: none;
+
+  border: 1px solid rgba(78, 209, 57, 1);
+}
+.text1 {
+  color: black;
+  &:hover {
+    color: rgba(78, 209, 57, 1);
+  }
+}
+
+.card5 {
+  // display: block;
+  // top: 0px;
+  // padding: 8px;
+  // margin: 32px;
+  // overflow: hidden;
+  position: relative;
+  width: 195px;
+  background-color: #fff;
+  border-radius: 2px;
+
+  text-decoration: none;
+
+  border: 1px solid #cdcece83;
+
+  &:hover {
+    border: 1px solid rgba(78, 209, 57, 1);
+    box-shadow: 0px 0px 999px 999px rgba(255, 255, 255, 0.5);
+    // z-index: 500;
+  }
+}
+
+.card5:hover {
+  .t {
+    color: rgba(78, 209, 57, 1);
+  }
+  // .go-corner {
+  //   transition: opactiy 0.3s linear;
+  //   opacity: 1;
+  // }
+}
+.img1 {
+  border-radius: 50%;
+}
+
+.card4 {
+  // display: block;
+  // top: 0px;
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 4px;
+  // padding: 10px 67px;
+  // margin: 32px;
+  // text-decoration: none;
+  // overflow: hidden;
+  border: 1px solid #f2f8f9;
+
+  &:hover {
+    border: 1px solid #0fcc19;
+    box-shadow: 0px 0px 999px 999px rgba(255, 255, 255, 0.5);
+    // z-index: 500;
+  }
+}
+
+.Ta {
+  background-color: #f4f5f8 !important;
+  border-color: #f4f5f8 !important;
+}
+
+.ImCard {
+  width: 50px;
+  height: 50px;
+  background-color: #f4f5f8;
+  border: #f4f5f8;
+  border-radius: 5px;
+}
+.But {
+  /* width: 26px !important;
+  height: 26px !important; */
+  background-color: #fdca57 !important;
+  color: white !important;
+}
+.textP {
+  color: #c7c7c5;
+  font-size: 16px;
+  text-align: right !important;
+}
+.textN {
+  font-size: 14px;
+  color: #4d4f5c;
+  /* font-family:"Poppins" */
+}
+.textNum {
+  font-size: 16px;
+  color: #4d4f5c;
+}
+.center {
+  display: "flex" !important;
+  justify-content: "center" !important;
+}
+.NumCard {
+  width: 20px !important;
+  height: 20px !important;
+  background-color: #f4f5f8 !important;
+  border: #f4f5f8 !important;
+  border-radius: 5px !important;
+  padding: 2px !important;
+}
+.Ro {
+  height: 45px;
+  background-color: #f7f8fa;
+  border: #f7f8fa;
+}
+.Ro1 {
+  height: 76px;
+  background-color: #f0f0f0;
+  border: #f0f0f0;
+}
+.Bo1 {
+  width: 100% !important;
+  height: 100% !important;
+  background-color: #ae0b1b !important;
+  border-color: #ae0b1b !important;
+}
+.Bo2 {
+  width: 100% !important;
+  height: 100% !important;
+  background-color: #4ed139 !important;
+  border-color: #4ed139 !important;
+}
+.te {
+  font-size: 19px;
+  color: white;
+  align-items: center !important;
+}
+.te2 {
+  font-size: 15px;
+
+  color: white;
+  align-items: center !important;
+}
+.t {
+  font-size: 16px;
+}
+.Texq {
+  font-size: 16px;
+  color: #4d4f5c;
+}
+.ng {
+  color: #4ed139;
+  font-size: 20px;
+}
+
+.fonR {
+  color: #ae0b1b;
+  font-size: 14px !important;
+}
+
+.btn {
+  height: 100% !important;
+  padding: 0px 0px !important;
+}
+
+.Pho {
+  height: 140px;
+}
+
+.btn {
+  height: 100% !important;
+  padding: 0px 0px !important;
+}
+.color {
+  top: 10px;
+  border-radius: 5px !important;
+  background-color: #cdced1;
+  font-size: 16px !important;
+  width: 150px;
+  height: 45px !important;
+}
+
+.Bhover {
+  color: #ffffff !important;
+  background: #4d4f5c !important;
+  border-color: #4d4f5c !important;
+}
+
+.ICard {
+  width: 150px;
+  height: 100px;
+  background-color: #f4f5f8;
+  border: #f4f5f8;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.PCard {
+  width: 100% !important;
+  height: 100% !important;
+  background-color: #f4f5f8 !important;
+  border: #f4f5f8 !important;
+  /* border-radius: 5px !important; */
+  /* padding: 2px !important; */
+}
+.NCard {
+  font-size: "25px" !important ;
+  color: "#4ED139" !important;
+  display: "flex" !important;
+  justify-content: "center" !important;
+  align-items: center !important;
+}
+.bCh {
+  // top: 20px;
+  // bottom: 20px;
+  background-color: #4ed139 !important;
+  border-color: #4ed139 !important;
+  border-radius: 5px !important;
+  color: white !important;
+  font-size: 18px !important;
+  width: 150px;
+  height: 45px !important;
+}
+
+.Modal {
+  top: 13%;
+  left: 5%;
+}
+
+.tab-nav {
+  background-color: #ae0b1b;
+  border-radius: 6px;
+}
+.site-button-ghost-wrapper {
+  color: #ae0b1b;
+  border-color: #ae0b1b;
+}
+.site-button-ghost-wrapper1 {
+  color: #fdca57;
+  border-color: #fdca57;
+}
+.text-page {
+  font: 35px Sukhumvit Set bold;
+}

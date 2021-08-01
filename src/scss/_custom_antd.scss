@@ -1,0 +1,290 @@
+// .ant-select-selector {
+//     height: 45px !important;
+//     border-radius: 10px !important;
+//     border: unset !important;
+//     display: flex !important;
+//     align-items: center !important;
+//     justify-content: center !important;
+//   }
+
+.ant-select-selection-search {
+  display: flex;
+  align-items: center;
+}
+.ant-select-selection-item {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.ant-card.ant-card-bordered {
+  border-radius: 8px !important;
+  border: unset;
+}
+
+label.ant-radio-button-wrapper {
+  border: unset !important;
+}
+
+.ant-radio-button-wrapper:first-child {
+  border-left: unset !important;
+}
+
+.ant-radio-button-wrapper:not(:first-child)::before {
+  display: none;
+}
+
+.ant-radio-button.ant-radio-button-checked:focus-within {
+  display: none;
+}
+
+label.ant-radio-button-wrapper {
+  font-size: 1.25rem !important;
+  color: #dee2ec;
+}
+
+.ant-modal-content {
+  border-radius: 8px !important;
+}
+
+.ant-modal-header {
+  border-top-right-radius: 8px !important;
+  border-top-left-radius: 8px !important;
+}
+
+.ant-modal-header {
+  border: unset !important;
+}
+
+.ant-modal-footer {
+  border: unset !important;
+}
+
+// .ant-modal-body {
+//   padding: 80px 100px 120px 100px !important;
+// }
+
+// .ant-spin-nested-loading > div > .ant-spin {
+//   max-height: 100vh !important;
+// }
+
+.ant-spin-lg .ant-spin-dot i {
+  width: 35px !important;
+  height: 35px !important;
+}
+
+.ant-spin-lg .ant-spin-dot {
+  font-size: 75px !important;
+}
+
+.ant-btn > span {
+  display: inline-flex !important;
+}
+
+.ant-form-item .ant-upload.ant-upload-drag {
+  background: #fafafa;
+  width: 157px;
+  height: 153px;
+}
+.ant-upload-text {
+  font-size: 18px;
+}
+.ant-upload.ant-upload-drag p.ant-upload-drag-icon {
+  margin-bottom: 0px !important;
+}
+
+.ant-upload.ant-upload-drag p.ant-upload-drag-icon .anticon {
+  color: #4d4f5c !important;
+  font-size: 30px !important;
+}
+
+.ant-radio-inner,
+.ant-radio-inner:after {
+  border-radius: 5 !important;
+}
+.ant-radio-inner:after {
+  border: none !important;
+}
+.ant-modal-footer {
+  text-align: center !important;
+}
+
+.ant-modal-footer button + button {
+  margin-bottom: 0 !important;
+  margin-left: 0px !important;
+}
+
+.ant-table.ant-table-middle .ant-table-thead > tr > th {
+  text-align: center;
+}
+
+.ant-pagination-item-active {
+  border-color: #ae0b1b !important;
+  background: #ae0b1b !important;
+}
+.ant-pagination-item-active a {
+  color: white !important;
+  background-color: #ae0b1b !important;
+  /* border-color: #AE0B1B; */
+  border: #ae0b1b !important;
+}
+.ant-table-pagination-right {
+  justify-content: flex-start !important;
+}
+.ant-modal-title {
+  color: #4d4f5c !important;
+  font-size: 30px !important;
+}
+.ant-cascader-menu:only-child {
+  height: 100%;
+}
+.ant-cascader-menus {
+  // width: 90%;
+  text-align: center;
+  font-size: 20px;
+  color: #525252;
+}
+.ant-divider-horizontal {
+  margin: 10px 0 !important;
+}
+
+.ant-tag-close-icon {
+  font-size: 13px !important;
+}
+
+.ant-tag {
+  border-radius: 5px !important;
+}
+
+.ant-upload.ant-upload-drag p.ant-upload-text {
+  color: #4d4f5c !important;
+  font-size: 13px !important;
+  padding-top: 10px;
+  // display: flex;
+  // justify-content: flex-end;
+}
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #000000;
+  width: 100px;
+  text-align: center;
+}
+.ant-tabs-ink-bar,
+.ant-tabs-ink-bar-animated {
+  border: #ae0b1b !important;
+  width: 0px !important;
+}
+.ant-tabs-nav-wrap {
+  background-color: #f7f8fa !important;
+  border-radius: 5px !important;
+}
+.card-container p {
+  margin: 0;
+}
+.card-container > .ant-tabs-card .ant-tabs-content {
+  height: 100%;
+  width: 100%;
+  margin-top: -16px;
+}
+.card-container > .ant-tabs-card .ant-tabs-content > .ant-tabs-tabpane {
+  background: #fff;
+  padding: 16px;
+}
+.card-container > .ant-tabs-card > .ant-tabs-nav::before {
+  display: none;
+}
+.ant-tabs-card.ant-tabs-top > .ant-tabs-nav .ant-tabs-tab:not(:last-of-type),
+.ant-tabs-card.ant-tabs-bottom > .ant-tabs-nav .ant-tabs-tab:not(:last-of-type),
+.ant-tabs-card.ant-tabs-top
+  > div
+  > .ant-tabs-nav
+  .ant-tabs-tab:not(:last-of-type),
+.ant-tabs-card.ant-tabs-bottom
+  > div
+  > .ant-tabs-nav
+  .ant-tabs-tab:not(:last-of-type) {
+  margin-right: 0px;
+}
+.ant-tabs-card > .ant-tabs-nav .ant-tabs-tab,
+.ant-tabs-card > div > .ant-tabs-nav .ant-tabs-tab {
+  background: #f7f8fa !important;
+  border: 1px solid #f7f8fa !important;
+}
+// .card-container > .ant-tabs-card .ant-tabs-tab,
+// [data-theme='compact'] .card-container > .ant-tabs-card .ant-tabs-tab {
+//   border-color: transparent;
+//   background: transparent;
+// }
+.card-container > .ant-tabs-card .ant-tabs-tab-active,
+[data-theme="compact"] .card-container > .ant-tabs-card .ant-tabs-tab-active {
+  border-color: #fff;
+  background: #fff;
+}
+#components-tabs-demo-card-top .code-box-demo {
+  background: #f5f5f5;
+  overflow: hidden;
+  padding: 24px;
+}
+// [data-theme='compact'] .card-container > .ant-tabs-card .ant-tabs-content {
+//   height: 120px;
+//   margin-top: -8px;
+// }
+// [data-theme='dark'] .card-container > .ant-tabs-card .ant-tabs-tab {
+//   border-color: transparent;
+//   background: transparent;
+// }
+// [data-theme='dark'] #components-tabs-demo-card-top .code-box-demo {
+//   background: #000;
+// }
+// [data-theme='dark'] .card-container > .ant-tabs-card .ant-tabs-content > .ant-tabs-tabpane {
+//   background: #141414;
+// }
+// [data-theme='dark'] .card-container > .ant-tabs-card .ant-tabs-tab-active {
+//   border-color: #141414;
+//   background: #141414;
+// }
+
+.icons-list > .anticon {
+  margin-right: 6px;
+  font-size: 24px;
+}
+.ant-row-rtl .icons-list > .anticon {
+  margin-right: 0;
+  margin-left: 6px;
+}
+
+.c-sidebar .c-sidebar-minimizer {
+  background-color: #ffffff;
+}
+
+.selection {
+  color: #ae0b1b !important;
+  background: #ae0b1b !important;
+}
+
+.color-text {
+  color: #000 !important;
+}
+
+.color-icon {
+  color: #ae0b1b !important;
+}
+
+.btn {
+  background-color: #ffffff;
+}
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #ffffff !important;
+}
+
+.ant-tabs-tab:hover {
+  color: #000000 !important;
+}
+.ant-tabs {
+  color: #d1cbd3 !important;
+}
+.ant-tabs-card.ant-tabs-top > .ant-tabs-nav .ant-tabs-tab-active {
+  background-color: #ae0b1b !important ;
+  border-radius: 6px !important;
+}
+.ant-tabs-card.ant-tabs-top > .ant-tabs-nav .ant-tabs-tab:not(:last-of-type) {
+  margin-right: 0px !important;
+}
