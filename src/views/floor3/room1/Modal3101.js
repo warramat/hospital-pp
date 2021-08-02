@@ -131,7 +131,8 @@ const Modal212 = () => {
     <>
       <Card>
         <Row>
-        <Form
+          <Col lg={12}>
+          <Form
         layout="vertical"
         form={form}
         initialValues={{
@@ -153,6 +154,8 @@ const Modal212 = () => {
       
       </Form>
 
+          </Col>
+       
         </Row>
      
       </Card>

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, Button, Table, Input, Modal, Tabs, Breadcrumb , Switch } from "antd";
+import { Row, Col, Button, Table, Input, Modal, Tabs, Breadcrumb , Switch , Space} from "antd";
+
+import { CloseOutlined, CheckOutlined } from '@ant-design/icons';
 import { DeleteFilled, FormOutlined, SearchOutlined } from "@ant-design/icons";
 import img from '../../../img/Searchdata.png'
 import axios from "axios";
@@ -18,17 +20,13 @@ import Item from "antd/lib/list/Item";
 const { Search } = Input;
 const Car = () =>
 {
+ 
+  const [value, setValue] = React.useState(false)
   
-  const textSwitch = {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    innerHeight: '100%',
-    fontsize: 15,
-    color: '#FFF'
-
+  const handleChange = (event) =>
+  {
+    setValue(event.target.checked)
   }
-  
 
   const [visible1, setVisible1] = useState(false);
     const [visible2, setVisible2] = useState(false);
@@ -89,13 +87,56 @@ const Car = () =>
     />
   );
 
+  const LIST = [
+    { id: 1, status: "รักษาอยู่" },
+    { id: 2, status: "หายแล้ว" }
+  ];
+
+  
+  const [list, setList] = useState(LIST);
+  const getListdata = async () =>
+  {
+    try
+    {
+      
+      const data = await axios.get(
+        'https://hotpital-pakpoon.herokuapp.com/auth/memberAll/'
+      );
+      console.log(data.data.data)
+      setList(data.data.data)
+  
+    } catch (e)
+    {
+      console.log(e)
+    }
+  };
+  useEffect(() =>
+  {
+    getListdata();
+  }, []);
+
   
  
   return (
     <> 
    <Row style={{ paddingBottom: "40px" , marginLeft: '100px' , padding: 30}}>
-            <Col lg={12}>
-          <Switch style={{disabled : true}}/>
+        <Col lg={12}>
+          
+         
+        {list.map((list) => {
+        return (
+          <div>
+            <Space>
+              เตียง : {list.id}
+              <Switch checked={list.status === "รักษาอยู่" ? true : false} />
+            </Space>
+            <br />
+            <br />
+          </div>
+        );
+      })}
+   
+        
             <Button
                 onClick={showModalinput1}
              style={{border:'none'}}
@@ -115,7 +156,8 @@ const Car = () =>
                           </Modal>
             </Col>
             <Col>
-            <Switch/>
+          
+        
             <Button
                 onClick={showModalinput2}
              style={{border:'none'}}
@@ -139,7 +181,10 @@ const Car = () =>
             <Row style={{ paddingBottom: "40px" , marginLeft: '100px',padding: 30}}>
             <Col lg={12}>
   
-            <Switch/>
+           
+          <Switch
+            style={{ checked  : true}}
+            checkedChildren="ว่าง" unCheckedChildren="เต็ม"   />
             <Button
                 onClick={showModalinput3}
              style={{border:'none'}}
@@ -158,7 +203,10 @@ const Car = () =>
                           </Modal>
             </Col>
             <Col>
-            <Switch/>
+           
+          <Switch
+            style={{ checked  : true}}
+            checkedChildren="ว่าง" unCheckedChildren="เต็ม"   />
             <Button
                 onClick={showModalinput4}
              style={{border:'none'}}
@@ -181,7 +229,10 @@ const Car = () =>
 
           <Row style={{ paddingBottom: "40px" , marginLeft: '100px',padding: 30}}>
             <Col lg={12}>
-            <Switch style={{disabled : true}}/>
+           
+          <Switch
+            style={{ checked  : true}}
+            checkedChildren="ว่าง" unCheckedChildren="เต็ม"   />
          
             <Button
                 onClick={showModalinput5}

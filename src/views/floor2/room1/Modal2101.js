@@ -1,14 +1,17 @@
 
 import React, { useState, useEffect } from "react";
-import { Row, Col, Button, Table, Input, Form , Select , Card } from "antd";
+import { Row, Col, Button, Table, Input, Form , Select , Card  , Space, Switch } from "antd";
 import { CaretDownFilled, CaretDownOutlined, HomeFilled } from "@ant-design/icons";
 import axios from "axios";
-const { Option } = Select;
+import "antd/dist/antd.css";
 
 
 
 
 const Modal212 = () => {
+
+  
+
   const [form] = Form.useForm();
   const [formLayout, setFormLayout] = useState("vertical");
   const [Car, setCar] = useState([]);
@@ -16,13 +19,7 @@ const Modal212 = () => {
   {
     try
     {
-      let serialnumber = ""
-      if (data1)
-      {
-        if (data1) {
-          serialnumber = data1
-        }
-      }
+      
       const data = await axios.get(
         'https://hotpital-pakpoon.herokuapp.com/auth/pagination/?page=1&limit=50&bednumber=2101'
       );
@@ -40,11 +37,11 @@ const Modal212 = () => {
 
   const columns = [
     {
-      title: 'bednumber',
+      title: 'เลขเตียง',
       dataIndex: 'bednumber',
       key: 'bednumber',
       align: "center",
-      width: 80,
+      width: 60,
       fixed: 'left',
     },
     {
@@ -52,7 +49,7 @@ const Modal212 = () => {
       dataIndex: 'prefix',
       key: 'prefix',
       align: "center",
-      width: 80,
+      width: 50,
       
     },
     {
@@ -60,7 +57,7 @@ const Modal212 = () => {
       dataIndex: 'firstname',
       key: 'firstname',
       align: "center",
-      width: 120,
+      width: 90,
       
     },
     {
@@ -68,7 +65,7 @@ const Modal212 = () => {
       dataIndex: 'lastname',
       key: 'lastname',
       align: "center",
-      width: 120,
+      width: 90,
      
     },
   
@@ -93,7 +90,7 @@ const Modal212 = () => {
       dataIndex: 'age',
       key: 'age',
       align: "center",
-      width: 80,
+      width: 50,
      
     },
     {
@@ -101,7 +98,7 @@ const Modal212 = () => {
       dataIndex: 'sex',
       key: 'sex',
       align: "center",
-      width: 70,
+      width: 50,
      
     },
     {
@@ -117,7 +114,7 @@ const Modal212 = () => {
       dataIndex: 'tel',
       key: 'tel',
       align: "center",
-      width: 120,
+      width: 60,
       
     },
     {
@@ -125,7 +122,15 @@ const Modal212 = () => {
       dataIndex: 'firstday',
       key: 'firstday',
       align: "center",
-      width: 120,
+      width: 100,
+      fixed: 'right',
+    },
+    {
+      title: 'status',
+      dataIndex: 'status',
+      key: 'status',
+      align: "center",
+      width: 100,
       fixed: 'right',
     },
    
@@ -147,30 +152,36 @@ const Modal212 = () => {
   };
   return (
     <>
-      <Card>
-        
-        <Form
-        layout="vertical"
-        form={form}
-        initialValues={{
-          layout: formLayout,
-        }}
-        onValuesChange={onFormLayoutChange}
-        onFinish={onFinish}
-        onFinishFailed={onFinishFailed}
-      >
-      
+      <Row >
+      <Col style={{padding: '20px'}}>
     
-      <Table
-                dataSource={Car}
-                columns={columns}
-                size="small"
-               
-               
-              />
-        </Form>
+     <Form
+     layout="vertical"
+     form={form}
+     initialValues={{
+       layout: formLayout,
+     }}
+     onValuesChange={onFormLayoutChange}
+     onFinish={onFinish}
+     onFinishFailed={onFinishFailed}
+   >
+   
+ 
+   <Table
+             dataSource={Car}
+             columns={columns}
+             size="small"
+
+           />
+     </Form>
+  
      
-      </Card>
+     
+   
+     </Col>
+   
+      </Row>
+     
      
     </>
   );
