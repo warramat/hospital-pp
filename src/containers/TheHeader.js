@@ -85,12 +85,12 @@ const TheHeader = () => {
           </CDropdownToggle>
         </CDropdown> */}
 
-        <CDropdown>
+        {/* <CDropdown>
           <CDropdownToggle caret color="black">
            วรเมธ สุทธิคณะ
             <Avatar src={Image179} style={{marginLeft:10}} />
           </CDropdownToggle>
-        </CDropdown>
+        </CDropdown> */}
 
       </CHeaderNav>
 

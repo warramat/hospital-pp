@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, Button, Table, Input, Modal, Tabs, Breadcrumb } from "antd";
+import { Row, Col, Button, Table, Input, Modal, Tabs, Breadcrumb , Switch , Space ,Card} from "antd";
+
+import { CloseOutlined, CheckOutlined } from '@ant-design/icons';
 import { DeleteFilled, FormOutlined, SearchOutlined } from "@ant-design/icons";
+import img from '../../../img/Searchdata.png'
+import img1 from '../../../img/door.png'
 import axios from "axios";
 
-import Modal4201 from "../room2/Modal4401";
-import Modal4202 from "../room2/Modal4402";
+import Modal4201 from "../room2/Modal4201";
+import Modal4202 from "../room2/Modal4202";
 import Modal4203 from "../room2/Modal4203";
 import Modal4204 from "../room2/Modal4204";
 import Modal4205 from "../room2/Modal4205";
@@ -19,19 +23,25 @@ import Item from "antd/lib/list/Item";
 
 
 const { Search } = Input;
-const Car = () => {
+const Room2 = () =>
+{
+ 
+  const [value, setValue] = React.useState(false)
   
+  const handleChange = (event) =>
+  {
+    setValue(event.target.checked)
+  }
 
-  const [visible1, setVisible1] = useState(false);
+    const [visible1, setVisible1] = useState(false);
     const [visible2, setVisible2] = useState(false);
     const [visible3, setVisible3] = useState(false);
     const [visible4, setVisible4] = useState(false);
-  const [visible5, setVisible5] = useState(false);
-  const [visible6, setVisible6] = useState(false);
-  const [visible7, setVisible7] = useState(false);
-  const [visible8, setVisible8] = useState(false);
-
-  const [disible, setDisible] = useState(false);
+    const [visible5, setVisible5] = useState(false);
+    const [visible6, setVisible6] = useState(false);
+    const [visible7, setVisible7] = useState(false);
+    const [visible8, setVisible8] = useState(false);
+  
 
   const showModalinput1 = () => {
     setVisible1(true);
@@ -50,90 +60,78 @@ const Car = () => {
     const showModalinput5 = () => {
         setVisible5(true);
   };
+  
   const showModalinput6 = () => {
     setVisible6(true);
   };
+  
+
   const showModalinput7 = () => {
     setVisible7(true);
   };
+  
+
   const showModalinput8 = () => {
     setVisible8(true);
-  };
-  
-    
+    };
+
 //   const showModalupdate = () => {
 //     setDisible(true);
 //   };
 
-  const Pagination = {
-    size: "default",
-    defaultPageSize: 6,
-    backgroundColor: "#AE0B1B",
+  
+
+  const LIST = [
+    { id: 1, status: "รักษาอยู่" },
+    { id: 2, status: "หายแล้ว" },
+    
+  ];
+
+  
+  const [list, setList] = useState(LIST);
+  const getListdata = async () =>
+  {
+    try
+    {
+      
+      const data = await axios.get(
+        'https://hotpital-pakpoon.herokuapp.com/auth/memberAll/'
+      );
+      console.log(data.data)
+      setList(data.data)
+  
+    } catch (e)
+    {
+      console.log(e)
+    }
   };
-
-  const iconDe = (
-    <DeleteFilled
-      style={{
-        fontSize: 14,
-      }}
-    />
-  );
-
-  const iconUp = (
-    <FormOutlined
-      style={{
-        fontSize: 14,
-      }}
-    />
-  );
-
-  const prefix = (
-    <SearchOutlined
-      style={{
-        fontSize: 16,
-        color: "#E3E3E3",
-      }}
-    />
-  );
+  useEffect(() =>
+  {
+    getListdata();
+  }, []);
 
   
  
   return (
     <> 
-    <Row>
-     
-    </Row>
-      <Row className="nav" style={{padding:"15px"}}>
-      
-        <Col>
-          <Row style={{ paddingBottom: "20px" }}>
-            <Col lg={12}>
-  
-             
-            </Col>
-            <Col
-              lg={12}
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "flex-end",
-              }}
-            >
-              <Button
+   <Card style={{borderColor:'violet'}}>
+      <Row style={{  marginLeft: '100px' , padding: 30 , marginTop: '-30px'}}>
+           <Col lg={12}>
+          
+            <Space>
+           {list.id}
+              <Switch checked={list.status} checkedChildren="เต็ม" unCheckedChildren="ว่าง" />
+            </Space>
+           
+            <Button
                 onClick={showModalinput1}
-                size="large"
-                style={{
-                  color: "white",
-                  background:"#21B253" ,
-                  border: "2px #21B253",
-                  // left:"400px",
-                  width: "100px",
-                }}
+             style={{border:'none'}}
               >
-                เตียงที่ 2
-              </Button>
+            <img src={img} style={{ width: '100px'  }} />
+          </Button>
+         
               <Modal
-                title="เพิ่มข้อมูล"
+                title="ข้อมูลผู้ป่วย"
                 visible={visible1}
                 width={1100}
                 style={{ top: "13%", left: "5%" }}
@@ -142,23 +140,22 @@ const Car = () => {
               >
                 <Modal4201 />
                           </Modal>
-                          
-
-                          <Button
+            </Col>
+            <Col lg={12}>
+          
+            <Space>
+              {list.id}
+              <Switch checked={list.status} checkedChildren="เต็ม" unCheckedChildren="ว่าง"  />
+            </Space>
+            <Button
                 onClick={showModalinput2}
-                size="large"
-                style={{
-                  color: "white",
-                  background:"#21B253" ,
-                  border: "2px #21B253",
-                  // left:"400px",
-                  width: "100px",
-                }}
-              >
-                เตียงที่ 4
+             style={{border:'none'}}
+          >
+            
+            <img src={img} style={{width:'100px'}}/>
               </Button>
               <Modal
-                title="เพิ่มข้อมูล"
+                           title="ข้อมูลผู้ป่วย"
                 visible={visible2}
                 width={1100}
                 style={{ top: "13%", left: "5%" }}
@@ -167,49 +164,48 @@ const Car = () => {
               >
                 <Modal4202/>
                           </Modal>
-                          
+        </Col>
 
-
-                          <Button
+        </Row>
+        <Row style={{  marginLeft: '100px' , padding: 30 , marginTop: '-30px'}}>
+        <Col lg={12}>
+  
+    
+            <Space>
+              {list.id}
+              <Switch checked={list.status} checkedChildren="เต็ม" unCheckedChildren="ว่าง"/>
+            </Space>
+            <Button
                 onClick={showModalinput3}
-                size="large"
-                style={{
-                  color: "white",
-                  background:"#21B253" ,
-                  border: "2px #21B253",
-                  // left:"400px",
-                  width: "100px",
-                }}
+             style={{border:'none'}}
               >
-                เตียงที่ 3
+            <img src={img} style={{width:'100px'}}/>
               </Button>
               <Modal
-                title="เพิ่มข้อมูล"
+                          title="ข้อมูลผู้ป่วย"
                 visible={visible3}
                 width={1100}
                 style={{ top: "13%", left: "5%" }}
                 onCancel={() => setVisible3(false)}
                 footer={false}
               >
-                <Modal4203/>
+                <Modal4203 />
                           </Modal>
-                          
-
-                          <Button
+        </Col>
+        
+        <Col lg={12}>
+            <Space>
+              {list.id}
+              <Switch checked={list.status} checkedChildren="เต็ม" unCheckedChildren="ว่าง"/>
+            </Space>
+            <Button
                 onClick={showModalinput4}
-                size="large"
-                style={{
-                  color: "white",
-                  background:"#21B253" ,
-                  border: "2px #21B253",
-                  // left:"400px",
-                  width: "100px",
-                }}
+             style={{border:'none'}}
               >
-                เตียงที่ 4
+            <img src={img} style={{width:'100px'}}/>
               </Button>
               <Modal
-                title="เพิ่มข้อมูล"
+                         title="ข้อมูลผู้ป่วย"
                 visible={visible4}
                 width={1100}
                 style={{ top: "13%", left: "5%" }}
@@ -218,22 +214,24 @@ const Car = () => {
               >
                 <Modal4204/>
                           </Modal>
-                          
-                          <Button
+        </Col>
+
+      </Row>
+      
+      <Row style={{  marginLeft: '100px' , padding: 30 , marginTop: '-30px'}}>
+        <Col lg={12}>
+            <Space>
+              {list.id}
+              <Switch checked={list.status} checkedChildren="เต็ม" unCheckedChildren="ว่าง"/>
+            </Space>
+            <Button
                 onClick={showModalinput5}
-                size="large"
-                style={{
-                  color: "white",
-                  background:"#21B253" ,
-                  border: "2px #21B253",
-                  // left:"400px",
-                  width: "100px",
-                }}
+             style={{border:'none'}}
               >
-                เตียงที่ 5
+            <img src={img} style={{width:'100px'}}/>
               </Button>
               <Modal
-                title="เพิ่มข้อมูล"
+                       title="ข้อมูลผู้ป่วย"
                 visible={visible5}
                 width={1100}
                 style={{ top: "13%", left: "5%" }}
@@ -241,23 +239,22 @@ const Car = () => {
                 footer={false}
               >
                 <Modal4205/>
-              </Modal>
+                          </Modal>
+        </Col>
 
-              <Button
+        <Col lg={12}>
+            <Space>
+              {list.id}
+              <Switch checked={list.status} checkedChildren="เต็ม" unCheckedChildren="ว่าง"/>
+            </Space>
+            <Button
                 onClick={showModalinput6}
-                size="large"
-                style={{
-                  color: "white",
-                  background:"#21B253" ,
-                  border: "2px #21B253",
-                  // left:"400px",
-                  width: "100px",
-                }}
+             style={{border:'none'}}
               >
-                เตียงที่ 6
+            <img src={img} style={{width:'100px'}}/>
               </Button>
               <Modal
-                title="เพิ่มข้อมูล"
+                           title="ข้อมูลผู้ป่วย"
                 visible={visible6}
                 width={1100}
                 style={{ top: "13%", left: "5%" }}
@@ -265,23 +262,24 @@ const Car = () => {
                 footer={false}
               >
                 <Modal4206/>
-              </Modal>
+                          </Modal>
+        </Col>
+      </Row>
+      <Row style={{  marginLeft: '100px' , padding: 30 , marginTop: '-30px'}}>
 
-              <Button
+        <Col lg={12}>
+            <Space>
+              {list.id}
+              <Switch checked={list.status} checkedChildren="เต็ม" unCheckedChildren="ว่าง"/>
+            </Space>
+            <Button
                 onClick={showModalinput7}
-                size="large"
-                style={{
-                  color: "white",
-                  background:"#21B253" ,
-                  border: "2px #21B253",
-                  // left:"400px",
-                  width: "100px",
-                }}
+             style={{border:'none'}}
               >
-                เตียงที่ 7
+            <img src={img} style={{width:'100px'}}/>
               </Button>
               <Modal
-                title="เพิ่มข้อมูล"
+                         title="ข้อมูลผู้ป่วย"
                 visible={visible7}
                 width={1100}
                 style={{ top: "13%", left: "5%" }}
@@ -289,25 +287,22 @@ const Car = () => {
                 footer={false}
               >
                 <Modal4207/>
-              </Modal>
+                          </Modal>
+        </Col>
 
-
-
-              <Button
+        <Col lg={12}>
+            <Space>
+              {list.id}
+              <Switch checked={list.status} checkedChildren="เต็ม" unCheckedChildren="ว่าง"/>
+            </Space>
+            <Button
                 onClick={showModalinput8}
-                size="large"
-                style={{
-                  color: "white",
-                  background:"#21B253" ,
-                  border: "2px #21B253",
-                  // left:"400px",
-                  width: "100px",
-                }}
+             style={{border:'none'}}
               >
-                เตียงที่ 8
+            <img src={img} style={{width:'100px'}}/>
               </Button>
               <Modal
-                title="เพิ่มข้อมูล"
+                      title="ข้อมูลผู้ป่วย"
                 visible={visible8}
                 width={1100}
                 style={{ top: "13%", left: "5%" }}
@@ -315,15 +310,18 @@ const Car = () => {
                 footer={false}
               >
                 <Modal4208/>
-              </Modal>
-            </Col>
-          </Row>
-
-          
+                          </Modal>
         </Col>
       </Row>
+
+      
+   
+      
+      <img src={img1} style={{ width: '100px', marginLeft: '200px', marginTop: '50px' }} />
+        <img src={img1} style={{ width: '100px', marginLeft: '200px', marginTop: '50px' }} />
+        </Card>
     </>
   );
 };
 
-export default Car;
+export default Room2;

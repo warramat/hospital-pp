@@ -8,7 +8,7 @@ const { Option } = Select;
 
 
 
-const Modal4101 = () => {
+const Modal212 = () => {
   const [form] = Form.useForm();
   const [formLayout, setFormLayout] = useState("vertical");
   const [Car, setCar] = useState([]);
@@ -24,7 +24,7 @@ const Modal4101 = () => {
         }
       }
       const data = await axios.get(
-        'https://hotpital-pakpoon.herokuapp.com/auth/pagination/?page=1&limit=50&bednumber=2101'
+        'https://hotpital-pakpoon.herokuapp.com/auth/pagination/?page=1&limit=50&bednumber=4201'
       );
       console.log(data.data.data)
       setCar(data.data.data)
@@ -40,80 +40,91 @@ const Modal4101 = () => {
 
   const columns = [
     {
-      title: 'bednumber',
+      title: 'เลขเตียง',
       dataIndex: 'bednumber',
       key: 'bednumber',
       align: "center",
       width: 80,
     },
     {
-      title: 'prefix',
+      title: 'คำนำหน้า',
       dataIndex: 'prefix',
       key: 'prefix',
       align: "center",
-      width: 80,
+      width: 70,
     },
     {
-      title: 'firstname',
+      title: 'ชื่อ',
       dataIndex: 'firstname',
       key: 'firstname',
       align: "center",
-      width: 120,
+      width: 100,
     },
     {
-      title: 'lastname',
+      title: 'นามสกุล',
       dataIndex: 'lastname',
       key: 'lastname',
       align: "center",
-      width: 120,
+      width: 100,
     },
   
     {
-      title: 'idcard',
+      title: 'เลขบัตรประชาชน',
       dataIndex: 'idcard',
       key: 'idcard',
       align: "center",
       width: 120,
     },
     {
-      title: 'birthday',
+      title: 'ว/ด/ป เกิด',
       dataIndex: 'birthday',
       key: 'birthday',
       align: "center",
-      width: 120,
+      width: 80,
     },
     {
-      title: 'age',
+      title: 'อายุ',
       dataIndex: 'age',
       key: 'age',
       align: "center",
       width: 80,
     },
     {
-      title: 'sex',
+      title: 'เพศ',
       dataIndex: 'sex',
       key: 'sex',
+      align: "center",
+      width: 80,
+    },
+    {
+      title: 'อาชีพ',
+      dataIndex: 'occupation',
+      key: 'occupation',
       align: "center",
       width: 70,
     },
     {
-      title: 'occupation',
-      dataIndex: 'occupation',
-      key: 'occupation',
-      align: "center",
-      width: 120,
-    },
-    {
-      title: 'tel',
+      title: 'เบอรืโทร',
       dataIndex: 'tel',
       key: 'tel',
       align: "center",
-      width: 120,
+      width: 80,
+    },
+    {
+      title: 'วันที่กักตัว',
+      dataIndex: 'firstday',
+      key: 'firstday',
+      align: "center",
+      width: 80,
+    },
+    {
+      title: 'สถานะ',
+      dataIndex: 'status',
+      key: 'status',
+      align: "center",
+      width: 70,
     },
    
-      
-    
-    
   ];
 
   const onFormLayoutChange = ({ layout }) => {
@@ -131,7 +142,8 @@ const Modal4101 = () => {
     <>
       <Card>
         <Row>
-        <Form
+          <Col lg={12}>
+          <Form
         layout="vertical"
         form={form}
         initialValues={{
@@ -146,39 +158,10 @@ const Modal4101 = () => {
                 dataSource={Car}
                 columns={columns}
                 size="small"
-              
                 bordered
               />
-        
-       
-        <Form.Item style={{ textAlign: "center" }}>
-          <Button
-            htmlType="button"
-            style={{
-              borderRadius: "2px",
-              background: "#F9F9F9",
-              border: "2px #F9F9F9",
-              width: "100px",
-              opacity: 1,
-            }}
-          >
-            ยกเลิก
-          </Button>
-          <Button
-            htmlType="submit"
-            style={{
-              borderRadius: "2px",
-              color: "white",
-              background: "#4ED139",
-              border: "2px #4ED1393",
-              width: "100px",
-            }}
-          >
-            บันทึก
-          </Button>
-        </Form.Item>
       </Form>
-
+          </Col>
         </Row>
      
       </Card>
@@ -187,4 +170,4 @@ const Modal4101 = () => {
   );
 };
 
-export default Modal4101;
+export default Modal212;

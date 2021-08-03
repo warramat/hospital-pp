@@ -12,7 +12,7 @@ import {
   CSidebarNavItem,
 } from '@coreui/react'
 
-import Tcnap from '../assets/image/tcnap-logo.png'
+import Tcnap from '../assets/image/sss.jpg'
 import CIcon from '@coreui/icons-react'
 
 // sidebar nav config
@@ -31,8 +31,8 @@ const TheSidebar = () => {
         <CIcon
           className="c-sidebar-brand-full"
           src={Tcnap}
-          height={70}
-          weight={50}
+          height={200}
+          weight={200}
         />
       
       </CSidebarBrand>

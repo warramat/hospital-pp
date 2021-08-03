@@ -3,7 +3,7 @@ import { Tabs, Row } from 'antd';
 import PermissionD from '../user/permission/Permission';
 import UserD from '../user/users/Users'
 import { CBreadcrumbRouter  } from '@coreui/react';
-import routes from '..//../routes'
+import routes from '../../routes'
 import Room1 from 'src/views/floor4/room1/Room1';
 import Room2 from 'src/views/floor4/room2/Room2';
 import Room3 from 'src/views/floor4/room3/Room3';
