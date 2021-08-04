@@ -1,17 +1,40 @@
 
 import React, { useState, useEffect } from "react";
-import { Row, Col, Button, Table, Input, Form , Select  } from "antd";
+import { Row, Col, Button, Table, Input, Form , Select , Card } from "antd";
 import { CaretDownFilled, CaretDownOutlined, HomeFilled } from "@ant-design/icons";
 import axios from "axios";
 const { Option } = Select;
 
 
+const LIST = [
+  {
+    "bednumber": "",
+    "prefix": "",
+    "firstname": "",
+    "lastname": "",
+    "idcard": "",
+    "birthday": " ",
+    "age": "",
+    "sex": "",
+    "occupation": "",
+    "tel": "",
+    "firstday": "",
+    "lastday": "",
+    "status": "",
+  }
+]
 
-
-const Modal212 = () => {
+const Modal212 = () =>
+{
+  
+  const [test , setTest] = useState(LIST)
   const [form] = Form.useForm();
   const [formLayout, setFormLayout] = useState("vertical");
   const [Car, setCar] = useState([]);
+
+
+
+ 
   const getCarData = async (data1) =>
   {
     try
@@ -24,7 +47,7 @@ const Modal212 = () => {
         }
       }
       const data = await axios.get(
-        'https://hotpital-pakpoon.herokuapp.com/auth/pagination/?page=1&limit=50&bednumber=4102'
+        'https://hotpital-pakpoon.herokuapp.com/auth/pagination/?page=1&limit=50&floor=4&room=1&bednumber=4102'
       );
       console.log(data.data.data)
       setCar(data.data.data)
@@ -37,6 +60,11 @@ const Modal212 = () => {
   {
     getCarData();
   }, []);
+
+
+
+
+
 
   const columns = [
     {
@@ -80,7 +108,7 @@ const Modal212 = () => {
       dataIndex: 'birthday',
       key: 'birthday',
       align: "center",
-      width: 80,
+      width: 120,
     },
     {
       title: 'อายุ',
@@ -117,68 +145,69 @@ const Modal212 = () => {
       align: "center",
       width: 80,
     },
-    {
-      title: 'สถานะ',
-      dataIndex: 'status',
-      key: 'status',
-      align: "center",
-      width: 70,
-    },
+   
    
   ];
 
-  
   const columns1 = [
     {
-      title: 'เลขเตียง',
-      dataIndex: 'bednumber',
-      key: 'bednumber',
+      title: 'วันที่',
+      dataIndex: 'created',
+      key: 'created',
       align: "center",
-      width: 80,
+      width: 150,
     },
     {
-      title: 'สถานะ',
+      title: 'status',
       dataIndex: 'status',
       key: 'status',
       align: "center",
-      width: 70,
+      width: 80,
     },
     {
-      title: 'คำนำหน้า',
-      dataIndex: 'prefix',
-      key: 'prefix',
+      title: 'ค่าอุณหภูมิ',
+      dataIndex: 'temperature',
+      key: 'temperature',
       align: "center",
-      width: 70,
+      width: 80,
     },
     {
-      title: 'ชื่อ',
-      dataIndex: 'firstname',
-      key: 'firstname',
+      title: 'ค่าความดันตัวบน',
+      dataIndex: 'upperpressure',
+      key: 'upperpressure',
       align: "center",
       width: 100,
     },
     {
-      title: 'นามสกุล',
-      dataIndex: 'lastname',
-      key: 'lastname',
+      title: 'ค่าความดันตัวล่าง',
+      dataIndex: 'lowerpressure',
+      key: 'lowerpressure',
+      align: "center",
+      width: 100,
+    },
+    {
+      title: 'ค่าออกซิเจนในเลือด',
+      dataIndex: 'bloodoxygen',
+      key: 'bloodoxygen',
+      align: "center",
+      width: 100,
+    },
+    {
+      title: 'ชีพจร',
+      dataIndex: 'pulse',
+      key: 'pulse',
       align: "center",
       width: 100,
     },
   
     {
-      title: 'เลขบัตรประชาชน',
-      dataIndex: 'idcard',
-      key: 'idcard',
+      title: 'ค่าน้ำตาลในเลือด',
+      dataIndex: 'bloodsugar',
+      key: 'bloodsugar',
       align: "center",
       width: 120,
     },
-    {
-      title: 'ว/ด/ป เกิด',
-      dataIndex: 'birthday',
-      key: 'birthday',
-      align: "center",
-      width: 80,
-    },
+   
    
   ];
 
@@ -195,7 +224,10 @@ const Modal212 = () => {
   };
   return (
     <>
-      <Form
+      <Card>
+        <Row>
+          <Col lg={12}>
+          <Form
         layout="vertical"
         form={form}
         initialValues={{
@@ -205,18 +237,26 @@ const Modal212 = () => {
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
       >
-        <Row>
+      
         <Table
-                dataSource={Car}
+                dataSource={test}
                 columns={columns}
                 size="small"
-              
                 bordered
               />
-        </Row>
-       
-     
+
+<Table
+                dataSource={Car}
+                columns={columns1}
+                size="small"
+                bordered
+              />
       </Form>
+          </Col>
+        </Row>
+     
+      </Card>
+     
     </>
   );
 };

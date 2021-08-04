@@ -24,7 +24,7 @@ const Modal212 = () => {
         }
       }
       const data = await axios.get(
-        'https://hotpital-pakpoon.herokuapp.com/auth/pagination/?page=1&limit=50&bednumber=2205'
+        'https://hotpital-pakpoon.herokuapp.com/auth/pagination/?page=1&limit=50&bednumber=2105'
       );
       console.log(data.data.data)
       setCar(data.data.data)

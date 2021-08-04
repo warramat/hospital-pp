@@ -6,12 +6,35 @@ import axios from "axios";
 const { Option } = Select;
 
 
+const LIST = [
+  {
+    "bednumber": "",
+    "prefix": "",
+    "firstname": "",
+    "lastname": "",
+    "idcard": "",
+    "birthday": " ",
+    "age": "",
+    "sex": "",
+    "occupation": "",
+    "tel": "",
+    "firstday": "",
+    "lastday": "",
+    "status": "",
+  }
+]
 
-
-const Modal212 = () => {
+const Modal212 = () =>
+{
+  
+  const [test , setTest] = useState(LIST)
   const [form] = Form.useForm();
   const [formLayout, setFormLayout] = useState("vertical");
   const [Car, setCar] = useState([]);
+
+
+
+ 
   const getCarData = async (data1) =>
   {
     try
@@ -24,7 +47,7 @@ const Modal212 = () => {
         }
       }
       const data = await axios.get(
-        'https://hotpital-pakpoon.herokuapp.com/auth/pagination/?page=1&limit=50&bednumber=4101'
+        'https://hotpital-pakpoon.herokuapp.com/auth/pagination/?page=1&limit=50&floor=4&room=2&bednumber=4204'
       );
       console.log(data.data.data)
       setCar(data.data.data)
@@ -37,6 +60,11 @@ const Modal212 = () => {
   {
     getCarData();
   }, []);
+
+
+
+
+
 
   const columns = [
     {
@@ -80,7 +108,7 @@ const Modal212 = () => {
       dataIndex: 'birthday',
       key: 'birthday',
       align: "center",
-      width: 80,
+      width: 120,
     },
     {
       title: 'อายุ',
@@ -117,13 +145,69 @@ const Modal212 = () => {
       align: "center",
       width: 80,
     },
+   
+   
+  ];
+
+  const columns1 = [
     {
-      title: 'สถานะ',
+      title: 'วันที่',
+      dataIndex: 'created',
+      key: 'created',
+      align: "center",
+      width: 150,
+    },
+    {
+      title: 'status',
       dataIndex: 'status',
       key: 'status',
       align: "center",
-      width: 70,
+      width: 80,
     },
+    {
+      title: 'ค่าอุณหภูมิ',
+      dataIndex: 'temperature',
+      key: 'temperature',
+      align: "center",
+      width: 80,
+    },
+    {
+      title: 'ค่าความดันตัวบน',
+      dataIndex: 'upperpressure',
+      key: 'upperpressure',
+      align: "center",
+      width: 100,
+    },
+    {
+      title: 'ค่าความดันตัวล่าง',
+      dataIndex: 'lowerpressure',
+      key: 'lowerpressure',
+      align: "center",
+      width: 100,
+    },
+    {
+      title: 'ค่าออกซิเจนในเลือด',
+      dataIndex: 'bloodoxygen',
+      key: 'bloodoxygen',
+      align: "center",
+      width: 100,
+    },
+    {
+      title: 'ชีพจร',
+      dataIndex: 'pulse',
+      key: 'pulse',
+      align: "center",
+      width: 100,
+    },
+  
+    {
+      title: 'ค่าน้ำตาลในเลือด',
+      dataIndex: 'bloodsugar',
+      key: 'bloodsugar',
+      align: "center",
+      width: 120,
+    },
+   
    
   ];
 
@@ -155,8 +239,15 @@ const Modal212 = () => {
       >
       
         <Table
-                dataSource={Car}
+                dataSource={test}
                 columns={columns}
+                size="small"
+                bordered
+              />
+
+<Table
+                dataSource={Car}
+                columns={columns1}
                 size="small"
                 bordered
               />

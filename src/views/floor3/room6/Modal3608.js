@@ -1,17 +1,40 @@
 
 import React, { useState, useEffect } from "react";
-import { Row, Col, Button, Table, Input, Form , Select  } from "antd";
+import { Row, Col, Button, Table, Input, Form , Select , Card } from "antd";
 import { CaretDownFilled, CaretDownOutlined, HomeFilled } from "@ant-design/icons";
 import axios from "axios";
 const { Option } = Select;
 
 
+const LIST = [
+  {
+    "bednumber": "",
+    "prefix": "",
+    "firstname": "",
+    "lastname": "",
+    "idcard": "",
+    "birthday": " ",
+    "age": "",
+    "sex": "",
+    "occupation": "",
+    "tel": "",
+    "firstday": "",
+    "lastday": "",
+    "status": "",
+  }
+]
 
-
-const Modal212 = () => {
+const Modal212 = () =>
+{
+  
+  const [test , setTest] = useState(LIST)
   const [form] = Form.useForm();
   const [formLayout, setFormLayout] = useState("vertical");
   const [Car, setCar] = useState([]);
+
+
+
+ 
   const getCarData = async (data1) =>
   {
     try
@@ -24,7 +47,7 @@ const Modal212 = () => {
         }
       }
       const data = await axios.get(
-        'https://hotpital-pakpoon.herokuapp.com/auth/pagination/?page=1&limit=50&bednumber=3608'
+        'https://hotpital-pakpoon.herokuapp.com/auth/pagination/?page=1&limit=50&floor=3&room=6&bednumber=3608'
       );
       console.log(data.data.data)
       setCar(data.data.data)
@@ -38,82 +61,154 @@ const Modal212 = () => {
     getCarData();
   }, []);
 
+
+
+
+
+
   const columns = [
     {
-      title: 'bednumber',
+      title: 'เลขเตียง',
       dataIndex: 'bednumber',
       key: 'bednumber',
       align: "center",
       width: 80,
     },
     {
-      title: 'prefix',
+      title: 'คำนำหน้า',
       dataIndex: 'prefix',
       key: 'prefix',
       align: "center",
-      width: 80,
+      width: 70,
     },
     {
-      title: 'firstname',
+      title: 'ชื่อ',
       dataIndex: 'firstname',
       key: 'firstname',
       align: "center",
-      width: 120,
+      width: 100,
     },
     {
-      title: 'lastname',
+      title: 'นามสกุล',
       dataIndex: 'lastname',
       key: 'lastname',
       align: "center",
-      width: 120,
+      width: 100,
     },
   
     {
-      title: 'idcard',
+      title: 'เลขบัตรประชาชน',
       dataIndex: 'idcard',
       key: 'idcard',
       align: "center",
       width: 120,
     },
     {
-      title: 'birthday',
+      title: 'ว/ด/ป เกิด',
       dataIndex: 'birthday',
       key: 'birthday',
       align: "center",
       width: 120,
     },
     {
-      title: 'age',
+      title: 'อายุ',
       dataIndex: 'age',
       key: 'age',
       align: "center",
       width: 80,
     },
     {
-      title: 'sex',
+      title: 'เพศ',
       dataIndex: 'sex',
       key: 'sex',
+      align: "center",
+      width: 80,
+    },
+    {
+      title: 'อาชีพ',
+      dataIndex: 'occupation',
+      key: 'occupation',
       align: "center",
       width: 70,
     },
     {
-      title: 'occupation',
-      dataIndex: 'occupation',
-      key: 'occupation',
-      align: "center",
-      width: 120,
-    },
-    {
-      title: 'tel',
+      title: 'เบอร์โทร',
       dataIndex: 'tel',
       key: 'tel',
+      align: "center",
+      width: 80,
+    },
+    {
+      title: 'วันที่กักตัว',
+      dataIndex: 'firstday',
+      key: 'firstday',
+      align: "center",
+      width: 80,
+    },
+   
+   
+  ];
+
+  const columns1 = [
+    {
+      title: 'วันที่ / เวลา',
+      dataIndex: 'created',
+      key: 'created',
+      align: "center",
+      width: 170,
+    },
+    {
+      title: 'status',
+      dataIndex: 'status',
+      key: 'status',
+      align: "center",
+      width: 80,
+    },
+    {
+      title: 'ค่าอุณหภูมิ',
+      dataIndex: 'temperature',
+      key: 'temperature',
+      align: "center",
+      width: 80,
+    },
+    {
+      title: 'ค่าความดันตัวบน',
+      dataIndex: 'upperpressure',
+      key: 'upperpressure',
+      align: "center",
+      width: 100,
+    },
+    {
+      title: 'ค่าความดันตัวล่าง',
+      dataIndex: 'lowerpressure',
+      key: 'lowerpressure',
+      align: "center",
+      width: 100,
+    },
+    {
+      title: 'ค่าออกซิเจนในเลือด',
+      dataIndex: 'bloodoxygen',
+      key: 'bloodoxygen',
+      align: "center",
+      width: 100,
+    },
+    {
+      title: 'ชีพจร',
+      dataIndex: 'pulse',
+      key: 'pulse',
+      align: "center",
+      width: 100,
+    },
+  
+    {
+      title: 'ค่าน้ำตาลในเลือด',
+      dataIndex: 'bloodsugar',
+      key: 'bloodsugar',
       align: "center",
       width: 120,
     },
    
-      
-    
-    
+   
   ];
 
   const onFormLayoutChange = ({ layout }) => {
@@ -129,7 +224,10 @@ const Modal212 = () => {
   };
   return (
     <>
-      <Form
+      <Card>
+        <Row>
+          <Col lg={12}>
+          <Form
         layout="vertical"
         form={form}
         initialValues={{
@@ -139,43 +237,26 @@ const Modal212 = () => {
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
       >
-        <Row>
+      
         <Table
-                dataSource={Car}
+                dataSource={test}
                 columns={columns}
                 size="small"
-              
                 bordered
               />
-        </Row>
-       
-        <Form.Item style={{ textAlign: "center" }}>
-          <Button
-            htmlType="button"
-            style={{
-              borderRadius: "2px",
-              background: "#F9F9F9",
-              border: "2px #F9F9F9",
-              width: "100px",
-              opacity: 1,
-            }}
-          >
-            ยกเลิก
-          </Button>
-          <Button
-            htmlType="submit"
-            style={{
-              borderRadius: "2px",
-              color: "white",
-              background: "#4ED139",
-              border: "2px #4ED1393",
-              width: "100px",
-            }}
-          >
-            บันทึก
-          </Button>
-        </Form.Item>
+
+<Table
+                dataSource={Car}
+                columns={columns1}
+                size="small"
+                bordered
+              />
       </Form>
+          </Col>
+        </Row>
+     
+      </Card>
+     
     </>
   );
 };
